@@ -16,15 +16,16 @@ module Instagram
       # @rate_limited true
       # @see TODO:docs url
 
-      # def media_item(id, options={})
-      #   response = get("media/#{id}", options)
-      #   response["data"]
-      # end
-      def media_item(*args)
-        id = args.first || 'self'
-        response = get("media/#{id}")
+      def media_item(id, options={})
+        response = get("media/#{id}", options)
         response["data"]
       end
+      
+      # def media_item(*args)
+      #   id = args.first || 'self'
+      #   response = get("media/#{id}")
+      #   response["data"]
+      # end
 
 
       # Returns a list of the overall most popular media
