@@ -17,7 +17,7 @@ module Instagram
       # @see TODO:docs url
       def media_item(*args)
         id = args.first || 'self'
-        response = get("media/#{id}")
+        response = get("media/#{id}", options)
         response["data"]
       end
 
