@@ -26,7 +26,7 @@ module Instagram
       def media_item(id, options={})
         #options = args.last.is_a?(Hash) ? args.pop : {}
         #id = args.first || 'self'
-        response = get("media/#{id}", options)
+        response = get("media/#{id}", options.merge(:access_token => access_token))
         response
       end
 
