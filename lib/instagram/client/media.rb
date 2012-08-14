@@ -20,7 +20,7 @@ module Instagram
         #options = args.last.is_a?(Hash) ? args.pop : {}
         #id = args.first || 'self'
         response = get("media/#{id}", options)
-        response1
+        response
       end
 
       # Returns a list of the overall most popular media
