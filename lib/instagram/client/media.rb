@@ -16,10 +16,12 @@ module Instagram
       # @rate_limited true
       # @see TODO:docs url
 
-      def media_item(id, options={})
-        #options = args.last.is_a?(Hash) ? args.pop : {}
-        #id = args.first || 'self'
-        response = get("media/#{id}", options)
+      # def media_item(id, options={})
+      #   response = get("media/#{id}", options)
+      #   response["data"]
+      # end
+      def media_likes(id, *args)
+        response = get("media/#{id}/likes")
         response["data"]
       end
 
