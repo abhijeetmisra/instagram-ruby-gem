@@ -16,18 +16,11 @@ module Instagram
       # @rate_limited true
       # @see TODO:docs url
 
-      # def media_item(*args)
-      #   options = args.last.is_a?(Hash) ? args.pop : {}
-      #   id = args.first || 'self'
-      #   response = get("media/#{id}", options)
-      #   response
-      # end
-
       def media_item(id, options={})
         #options = args.last.is_a?(Hash) ? args.pop : {}
         #id = args.first || 'self'
-        response = get("media/#{id}", options.merge(:access_token => access_token))
-        response
+        response = get("media/#{id}", options)
+        response1
       end
 
       # Returns a list of the overall most popular media
