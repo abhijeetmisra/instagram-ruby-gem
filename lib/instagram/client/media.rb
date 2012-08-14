@@ -15,9 +15,17 @@ module Instagram
       #   If getting this data of a protected user, you must authenticate (and be allowed to see that user).
       # @rate_limited true
       # @see TODO:docs url
-      def media_item(*args)
-        options = args.last.is_a?(Hash) ? args.pop : {}
-        id = args.first || 'self'
+
+      # def media_item(*args)
+      #   options = args.last.is_a?(Hash) ? args.pop : {}
+      #   id = args.first || 'self'
+      #   response = get("media/#{id}", options)
+      #   response
+      # end
+
+      def media_item(id, options={})
+        #options = args.last.is_a?(Hash) ? args.pop : {}
+        #id = args.first || 'self'
         response = get("media/#{id}", options)
         response
       end
