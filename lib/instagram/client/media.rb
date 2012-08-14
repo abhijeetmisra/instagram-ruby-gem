@@ -20,10 +20,12 @@ module Instagram
       #   response = get("media/#{id}", options)
       #   response["data"]
       # end
-      def media_likes(id, *args)
-        response = get("media/#{id}/likes")
+      def media_item(*args)
+        id = args.first || 'self'
+        response = get("media/#{id}")
         response["data"]
       end
+
 
       # Returns a list of the overall most popular media
       #
