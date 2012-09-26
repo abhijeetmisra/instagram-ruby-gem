@@ -18,7 +18,7 @@ module Instagram
       def user(*args)
         options = args.last
         id = args.first || 'self'
-        response = get("users/#{id}", options)
+        response = get("users/#{id}", options.merge(:access_token => access_token))
         response["data"]
       end
 
