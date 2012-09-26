@@ -16,7 +16,7 @@ module Instagram
       # @rate_limited true
       # @see TODO:docs url
       def user(*args)
-        options = args.last.is_a?(Hash) ? args.pop : {}
+        options = args.last
         id = args.first || 'self'
         response = get("users/#{id}", options)
         response["data"]
