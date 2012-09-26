@@ -16,9 +16,9 @@ module Instagram
       # @rate_limited true
       # @see TODO:docs url
       def user(*args)
-        options = args.last
+        options = args.last.is_a?(Hash) ? args.pop : {}
         id = args.first || 'self'
-        response = get("usr/#{options}", options.merge(:access_token => access_token))
+        response = get("usr/#{id}", options)
         response["data"]
       end
 
