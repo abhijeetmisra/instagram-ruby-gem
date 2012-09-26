@@ -17,7 +17,6 @@ module Instagram
       # @see TODO:docs url
       def user(*args)
         options = args.last
-        raise options.to_yaml
         id = args.first || 'self'
         response = get("users/#{id}", options)
         response["data"]
